@@ -1,6 +1,18 @@
 pool:
   name: 'Default'
 
+trigger:
+  branches:
+    include:
+    - master
+
+pr:
+  branches:
+    include:
+    - feature-*
+    exclude:
+    - feature-experimental-*
+
 variables:
   imageName: 'simpleapp:1.1.$(Build.BuildId)'
   # define two more variables dockerId and dockerPassword in the build pipeline in UI
